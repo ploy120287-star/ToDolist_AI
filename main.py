@@ -1,7 +1,21 @@
 print(" Hello World! ")
 
+tasks = []
+
+
 def add_task():
-    pass
+    title = input("ชื่อเรื่อง: ")
+    description = input("รายละเอียด: ")
+    due_date = input("วันครบกำหนด: ")
+    task_id = max((task["id"] for task in tasks), default=0) + 1
+
+    tasks.append({
+        "id": task_id,
+        "title": title,
+        "description": description,
+        "due_date": due_date,
+        "completed": False,
+    })
 
 
 def view_tasks():
